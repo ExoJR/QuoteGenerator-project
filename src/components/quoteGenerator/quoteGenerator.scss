@@ -1,0 +1,118 @@
+@mixin centerd-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-weight: 600;
+  transition: background-color 0.5s ease;
+  @include centerd-box;
+
+  #quote-box {
+    width: 450px;
+    height: auto; 
+    max-height: 100%;
+    padding: 25px;
+    background-color: aliceblue;
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 20px;
+    @include centerd-box;
+    flex-direction: column;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+  }
+
+  #quote-text {
+    transition: color 0.5s ease-in, opacity 0.5s ease;
+}
+  .fade-out {
+    opacity: 0; 
+  }
+
+  #author {
+    text-align: end;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 500;
+    transition: color 0.5s ease;
+  }
+
+  #buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+
+    .button-24 {
+      background: #ff4742;
+      border: 1px solid #ff4742;
+      border-radius: 6px;
+      box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+      box-sizing: border-box;
+      color: aliceblue;
+      cursor: pointer;
+      display: inline-block;
+      font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 16px;
+      min-height: 40px;
+      outline: 0;
+      padding: 12px 14px;
+      text-align: center;
+      text-rendering: geometricprecision;
+      text-transform: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: middle;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    .button-24:hover,
+    .button-24:active {
+      background-color: initial;
+      color: #ff4742;
+    }
+
+    .button-24:active {
+      opacity: 0.5;
+    }
+
+    #tumblr-quote {
+      margin-left: 15px;
+      padding: 2px 4px;
+
+      .faTumblrSquare {
+        font-size: 35px;
+      }
+    }
+
+    #tweet-quote {
+        padding: 2px 4px;
+  
+        .faTwitterSquare {
+          font-size: 35px;
+        }
+      }
+  }
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
